@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Untuk Enku ❤️</title>
 
 <style>
@@ -17,214 +16,49 @@ html,body{
     width:100%;
     height:100%;
     overflow:hidden;
-    font-family:"Segoe UI",sans-serif;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 
-/* =========================
-   BACKGROUND
-========================= */
-
 body{
-    background:
-    radial-gradient(circle at 50% 40%,#5b125e,#22002f 45%,#08000f);
+    background:#09000f;
     color:white;
 }
 
-/* BINTANG */
+/* =====================================================
+   STAR
+===================================================== */
 
 .star{
-    position:absolute;
-    width:3px;
-    height:3px;
+    position:fixed;
+    width:2px;
+    height:2px;
     border-radius:50%;
     background:white;
-    opacity:.7;
+    opacity:.6;
     animation:twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle{
-    from{opacity:.15;transform:scale(.5)}
-    to{opacity:1;transform:scale(1.5)}
+    from{
+        opacity:.15;
+        transform:scale(.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.7);
+    }
 }
 
-/* =========================
-   HALAMAN AWAL
-========================= */
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
 
 #mainPage{
-    position:relative;
-    width:100%;
-    height:100vh;
+    position:fixed;
+    inset:0;
+
     display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
-
-.content{
-    width:90%;
-    max-width:650px;
-    z-index:5;
-}
-
-.bigHeart{
-    font-size:85px;
-    animation:heartbeat 1.2s infinite;
-    filter:drop-shadow(0 0 25px #ff4fa3);
-}
-
-@keyframes heartbeat{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.2)}
-}
-
-.title{
-    margin-top:15px;
-    font-size:clamp(30px,7vw,55px);
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #ff82c0,
-        #fff
-    );
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:titleGlow 2s infinite alternate;
-}
-
-@keyframes titleGlow{
-    from{filter:drop-shadow(0 0 5px #ff5aa9)}
-    to{filter:drop-shadow(0 0 25px white)}
-}
-
-.subtitle{
-    margin-top:20px;
-    line-height:1.7;
-    color:#ffd8eb;
-    font-size:17px;
-}
-
-#joke{
-    height:35px;
-    margin-top:25px;
-    font-weight:bold;
-    color:#ff9bc9;
-}
-
-/* =========================
-   TOMBOL
-========================= */
-
-#btn{
-    position:relative;
-    margin-top:20px;
-
-    padding:17px 32px;
-
-    border:none;
-    border-radius:50px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff297d,
-        #ff72b6
-    );
-
-    color:white;
-
-    font-size:17px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 0 15px #ff398d,
-    0 0 35px rgba(255,70,150,.5);
-
-    transition:
-    left .25s,
-    top .25s,
-    transform .25s;
-}
-
-/* =========================
-   MODE JAHIL
-========================= */
-
-#level{
-    margin-top:12px;
-    font-size:13px;
-    color:#c9a8c7;
-}
-
-/* =========================
-   WARNING
-========================= */
-
-#warning{
-    position:fixed;
-    inset:0;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(0,0,0,.75);
-
-    z-index:50;
-
-    text-align:center;
-}
-
-.warningBox{
-    padding:30px;
-    width:85%;
-    max-width:400px;
-
-    border-radius:25px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #4b0753,
-        #17001e
-    );
-
-    box-shadow:
-    0 0 50px #ff4eaa;
-}
-
-.warningBox h2{
-    font-size:28px;
-    margin-bottom:15px;
-}
-
-.warningBox p{
-    color:#ffd5e9;
-    line-height:1.6;
-}
-
-.warningBtn{
-    margin-top:20px;
-    padding:12px 25px;
-    border:0;
-    border-radius:30px;
-    background:#ff4d9a;
-    color:white;
-    font-weight:bold;
-}
-
-/* =========================
-   FINAL PAGE
-========================= */
-
-#finalPage{
-    position:fixed;
-    inset:0;
-
-    display:none;
-
     align-items:center;
     justify-content:center;
 
@@ -232,100 +66,619 @@ body{
 
     background:
     radial-gradient(
-        circle at center,
-        #ff91c8 0%,
-        #8e267c 30%,
-        #26002f 65%,
-        #07000d 100%
+        circle at 50% 35%,
+        #55115d 0%,
+        #27002f 40%,
+        #09000f 80%
     );
 
-    z-index:100;
-
-    overflow:hidden;
+    transition:opacity 1s;
 }
 
-.finalContent{
+.mainContent{
+    width:92%;
+    max-width:650px;
     position:relative;
     z-index:10;
-
-    width:90%;
-
-    animation:appear 2s ease;
 }
 
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:scale(.3) rotate(-10deg);
+.mainHeart{
+    font-size:75px;
+
+    animation:
+    heartbeat 1.3s infinite;
+
+    filter:
+    drop-shadow(0 0 15px #ff4fa5)
+    drop-shadow(0 0 35px #ff4fa5);
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
     }
-    to{
-        opacity:1;
-        transform:scale(1) rotate(0);
+
+    50%{
+        transform:scale(1.18);
     }
 }
 
-.finalHeart{
-    font-size:100px;
-    animation:heartbeat 1.2s infinite;
+.date{
+    margin-top:10px;
+
+    font-size:14px;
+    letter-spacing:4px;
+
+    color:#ffbadc;
 }
 
-.finalTitle{
-    font-size:clamp(40px,9vw,90px);
-    font-weight:900;
+.mainTitle{
+    margin-top:15px;
+
+    font-size:
+    clamp(32px,8vw,60px);
+
+    font-weight:800;
 
     background:
     linear-gradient(
         90deg,
         white,
-        #ffd4e9,
-        white,
-        #ff9acb
+        #ff91c7,
+        white
     );
 
     -webkit-background-clip:text;
     color:transparent;
 
+    filter:
+    drop-shadow(0 0 10px #ff58a9);
+}
+
+.intro{
+    margin-top:20px;
+
+    color:#f8d8e8;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+#joke{
+    min-height:50px;
+
+    margin-top:20px;
+
+    color:#ff9fcb;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#patience{
+    margin-top:5px;
+
+    font-size:12px;
+
+    color:#ad91b2;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+#thanksBtn{
+    position:relative;
+
+    margin-top:22px;
+
+    padding:17px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff237d,
+        #ff73b7
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px #ff348e,
+    0 0 40px rgba(255,55,145,.5);
+
+    transition:
+    .25s;
+}
+
+#thanksBtn:hover{
+    box-shadow:
+    0 0 25px #ff65ad,
+    0 0 60px #ff65ad;
+}
+
+
+/* =====================================================
+   FAKE POPUP
+===================================================== */
+
+#popup{
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+    rgba(0,0,0,.78);
+
+    z-index:50;
+
+    text-align:center;
+}
+
+.popupBox{
+    width:88%;
+    max-width:420px;
+
+    padding:32px 25px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #4c0957,
+        #18001f
+    );
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 0 50px rgba(255,60,160,.4);
+
+    animation:
+    popupIn .4s;
+}
+
+@keyframes popupIn{
+    from{
+        transform:scale(.6);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.popupBox h2{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.popupBox p{
+    color:#ffd9ea;
+    line-height:1.7;
+}
+
+.popupButton{
+    margin-top:20px;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:#ff4d9b;
+
+    color:white;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   FAKE LOADING
+===================================================== */
+
+#loading{
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    background:
+    #08000d;
+
+    z-index:80;
+
+    text-align:center;
+}
+
+.loadingHeart{
+    font-size:70px;
+
+    animation:
+    heartbeat 1s infinite;
+}
+
+.loadingText{
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#ffd7e8;
+}
+
+.loadingBar{
+    margin-top:20px;
+
+    width:250px;
+    height:7px;
+
+    border-radius:20px;
+
+    background:#2c1731;
+
+    overflow:hidden;
+}
+
+.loadingProgress{
+    width:0%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff3d91,
+        #ffc1df
+    );
+
+    transition:
+    width .3s;
+}
+
+
+/* =====================================================
+   CINEMATIC
+===================================================== */
+
+#cinematic{
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    background:#020005;
+
+    z-index:100;
+
+    overflow:hidden;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.cinemaScene{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+
+    opacity:0;
+
+    transition:
+    opacity 2s;
+}
+
+.sceneBackground{
+    position:absolute;
+
+    inset:-20px;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        #6d315d,
+        #1b0820 45%,
+        #030006 85%
+    );
+
+    filter:blur(2px);
+}
+
+.sceneContent{
+    position:relative;
+
+    z-index:5;
+
+    max-width:700px;
+
+    padding:25px;
+
+    transform:translateY(30px);
+
+    transition:
+    transform 2s;
+}
+
+.sceneSmall{
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    color:#eab4d2;
+
+    text-transform:uppercase;
+}
+
+.sceneText{
+    margin-top:20px;
+
+    font-family:
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(28px,7vw,55px);
+
+    line-height:1.35;
+
+    color:#fff1f8;
+
     text-shadow:
-    0 0 25px rgba(255,255,255,.5);
+    0 0 20px rgba(255,120,190,.5);
+}
+
+.sceneHeart{
+    margin-top:25px;
+
+    font-size:35px;
+
+    animation:
+    heartbeat 1.5s infinite;
+}
+
+
+/* =====================================================
+   FILM STRIP
+===================================================== */
+
+.film{
+    position:absolute;
+
+    width:130%;
+
+    height:80px;
+
+    border-top:
+    8px solid rgba(255,200,220,.2);
+
+    border-bottom:
+    8px solid rgba(255,200,220,.2);
+
+    transform:
+    rotate(-12deg);
+
+    opacity:.35;
+
+    animation:
+    filmMove 12s linear infinite;
+}
+
+@keyframes filmMove{
+    from{
+        transform:
+        translateX(-20%)
+        rotate(-12deg);
+    }
+
+    to{
+        transform:
+        translateX(20%)
+        rotate(-12deg);
+    }
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+#finalPage{
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 50% 40%,
+        #ff94c8 0%,
+        #8a286f 28%,
+        #350038 60%,
+        #08000e 100%
+    );
+
+    z-index:200;
+}
+
+.finalContent{
+    width:94%;
+
+    max-width:900px;
+
+    position:relative;
+
+    z-index:20;
+
+    animation:
+    finalAppear 3s ease;
+}
+
+@keyframes finalAppear{
+
+    0%{
+        opacity:0;
+        transform:
+        scale(.4)
+        translateY(50px);
+    }
+
+    70%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        scale(1)
+        translateY(0);
+    }
+}
+
+.finalHeart{
+    font-size:
+    clamp(60px,15vw,120px);
+
+    animation:
+    heartbeat 1.3s infinite;
+
+    filter:
+    drop-shadow(0 0 25px #ff5fae);
+}
+
+.finalTitle{
+
+    margin-top:10px;
+
+    font-family:
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(40px,10vw,90px);
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #ffd5e9,
+        #fff,
+        #ff9dca
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    filter:
+    drop-shadow(0 0 15px #ff69ad);
 }
 
 .enku{
-    margin-top:5px;
 
-    font-size:clamp(45px,9vw,85px);
+    margin-top:8px;
 
-    font-weight:900;
+    font-family:
+    Georgia,
+    serif;
+
+    font-size:
+    clamp(50px,11vw,100px);
+
+    font-weight:bold;
 
     color:white;
 
     text-shadow:
     0 0 10px white,
-    0 0 30px #ff54a9,
-    0 0 70px #ff54a9;
+    0 0 30px #ff5ba9,
+    0 0 70px #ff5ba9;
+}
+
+.finalDate{
+
+    margin-top:20px;
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+    color:#ffe2ef;
 }
 
 .finalMessage{
+
     margin-top:25px;
 
-    font-size:18px;
+    line-height:1.8;
 
-    color:#ffe7f3;
+    color:#ffe8f2;
 
-    line-height:1.7;
+    font-size:17px;
 }
 
-/* =========================
-   HEART TERBANG
-========================= */
+
+/* =====================================================
+   FLYING HEARTS
+===================================================== */
 
 .flyingHeart{
+
     position:absolute;
 
-    bottom:-50px;
-
-    animation:flyHeart linear forwards;
+    bottom:-60px;
 
     pointer-events:none;
+
+    animation:
+    flyHeart linear forwards;
 }
 
 @keyframes flyHeart{
@@ -334,7 +687,7 @@ body{
         transform:
         translateY(0)
         rotate(0deg)
-        scale(.5);
+        scale(.4);
 
         opacity:0;
     }
@@ -347,28 +700,71 @@ body{
         transform:
         translateY(-120vh)
         rotate(720deg)
-        scale(1.5);
+        scale(1.6);
 
         opacity:0;
     }
 }
 
-/* =========================
+
+/* =====================================================
+   PETALS
+===================================================== */
+
+.petal{
+
+    position:absolute;
+
+    top:-40px;
+
+    width:12px;
+    height:18px;
+
+    border-radius:
+    100% 0 100% 0;
+
+    background:#ff9fc9;
+
+    animation:
+    petalFall linear forwards;
+
+    opacity:.8;
+}
+
+@keyframes petalFall{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0deg);
+    }
+
+    100%{
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+    }
+}
+
+
+/* =====================================================
    CONFETTI
-========================= */
+===================================================== */
 
 .confetti{
+
     position:absolute;
+
+    top:-30px;
 
     width:8px;
     height:16px;
 
-    top:-30px;
-
-    animation:fall linear forwards;
+    animation:
+    confettiFall linear forwards;
 }
 
-@keyframes fall{
+@keyframes confettiFall{
 
     to{
         transform:
@@ -379,12 +775,15 @@ body{
     }
 }
 
-/* =========================
+
+/* =====================================================
    FLASH
-========================= */
+===================================================== */
 
 #flash{
+
     position:fixed;
+
     inset:0;
 
     background:white;
@@ -393,59 +792,147 @@ body{
 
     pointer-events:none;
 
-    z-index:200;
+    z-index:500;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .intro{
+        font-size:15px;
+    }
+
+    .mainTitle{
+        line-height:1.1;
+    }
+
+    .sceneText{
+        font-size:30px;
+    }
+
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
-     HALAMAN UTAMA
-========================= -->
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div id="mainPage">
 
-    <div class="content">
+<div class="mainContent">
 
-        <div class="bigHeart">
-            ❤️
-        </div>
+    <div class="mainHeart">
+        ❤️
+    </div>
 
-        <div class="title">
-            Ada Sesuatu Untukmu...
-        </div>
+    <div class="date">
+        20 • 09 • 2026
+    </div>
 
-        <div class="subtitle">
+    <div class="mainTitle">
+        Untuk Enku...
+    </div>
 
-            Hari ini bukan hari biasa.
+    <div class="intro">
 
-            <br><br>
+        Hari ini ada satu hal kecil
+        yang ingin aku sampaikan.
 
-            Karena ada seseorang yang
-            sedang bertambah usia...
+        <br><br>
 
-            <br><br>
+        Sebenarnya sederhana...
 
-            Tapi sebelum mendapatkan
-            kejutan...
+        <br>
 
-            <br>
+        tapi entah kenapa,
+        aku ingin membuatnya sedikit
+        lebih ribet untukmu. 😌
 
-            kamu harus menekan tombol ini 😏
+        <br><br>
 
-        </div>
+        Kalau kamu sudah sampai di sini,
+        berarti kamu harus menekan tombol
+        di bawah.
 
-        <div id="joke">
-            Silakan klik dengan tenang...
-        </div>
+    </div>
 
-        <button id="btn">
-            TERIMA KASIH ❤️
-        </button>
+    <div id="joke">
+        Klik saja... aku janji tidak akan
+        melakukan apa-apa. 😇
+    </div>
 
-        <div id="level">
-            Tingkat kesabaran: 100%
+    <div id="patience">
+        Tingkat kesabaran Enku: 100%
+    </div>
+
+    <button id="thanksBtn">
+        TERIMA KASIH ❤️
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     POPUP
+===================================================== -->
+
+<div id="popup">
+
+<div class="popupBox">
+
+    <h2 id="popupTitle">
+        😇 Tunggu...
+    </h2>
+
+    <p id="popupText">
+        Sistem sedang memastikan
+        apakah kamu benar-benar ingin
+        menekan tombol tersebut.
+    </p>
+
+    <button
+        class="popupButton"
+        onclick="closePopup()">
+
+        IYA, LANJUT 😤
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<div id="loading">
+
+    <div class="loadingHeart">
+        💗
+    </div>
+
+    <div class="loadingText" id="loadingText">
+        Menyiapkan sesuatu untuk Enku...
+    </div>
+
+    <div class="loadingBar">
+
+        <div
+            class="loadingProgress"
+            id="progress">
         </div>
 
     </div>
@@ -453,92 +940,241 @@ body{
 </div>
 
 
-<!-- =========================
-     WARNING
-========================= -->
+<!-- =====================================================
+     CINEMATIC
+===================================================== -->
 
-<div id="warning">
+<div id="cinematic">
 
-    <div class="warningBox">
+    <div class="film"></div>
 
-        <h2>
-            ⚠️ PERINGATAN
-        </h2>
+    <!-- SCENE 1 -->
 
-        <p>
-            Kamu benar-benar masih mau
-            mengejar tombol ini?
-            <br><br>
-            Aku sudah memperingatkan 😈
-        </p>
+    <div class="cinemaScene">
 
-        <button
-            class="warningBtn"
-            onclick="closeWarning()">
+        <div class="sceneBackground"></div>
 
-            LANJUTKAN 😤
+        <div class="sceneContent">
 
-        </button>
+            <div class="sceneSmall">
+                20 September 2026
+            </div>
+
+            <div class="sceneText">
+                Ada hari-hari yang
+                datang seperti biasa...
+            </div>
+
+            <div class="sceneHeart">
+                ✦
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCENE 2 -->
+
+    <div class="cinemaScene">
+
+        <div class="sceneBackground"></div>
+
+        <div class="sceneContent">
+
+            <div class="sceneSmall">
+                Tapi hari ini berbeda
+            </div>
+
+            <div class="sceneText">
+                Karena hari ini...
+                adalah hari ketika
+                seseorang yang aku sayangi
+                dilahirkan.
+            </div>
+
+            <div class="sceneHeart">
+                ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCENE 3 -->
+
+    <div class="cinemaScene">
+
+        <div class="sceneBackground"></div>
+
+        <div class="sceneContent">
+
+            <div class="sceneSmall">
+                Untukmu
+            </div>
+
+            <div class="sceneText">
+                Terima kasih sudah hadir
+                di hidupku, Enku...
+            </div>
+
+            <div class="sceneHeart">
+                💕
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCENE 4 -->
+
+    <div class="cinemaScene">
+
+        <div class="sceneBackground"></div>
+
+        <div class="sceneContent">
+
+            <div class="sceneSmall">
+                Sebuah doa kecil
+            </div>
+
+            <div class="sceneText">
+                Semoga langkahmu selalu
+                menemukan jalan pulang
+                menuju kebahagiaan.
+            </div>
+
+            <div class="sceneHeart">
+                ✨
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCENE 5 -->
+
+    <div class="cinemaScene">
+
+        <div class="sceneBackground"></div>
+
+        <div class="sceneContent">
+
+            <div class="sceneSmall">
+                Dan malam ini...
+            </div>
+
+            <div class="sceneText">
+                Tidak ada hadiah
+                yang cukup untuk menggambarkan
+                betapa berharganya dirimu.
+            </div>
+
+            <div class="sceneHeart">
+                💖
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCENE 6 -->
+
+    <div class="cinemaScene">
+
+        <div class="sceneBackground"></div>
+
+        <div class="sceneContent">
+
+            <div class="sceneSmall">
+                Jadi...
+            </div>
+
+            <div class="sceneText">
+                izinkan aku mengatakan
+                satu hal yang sederhana...
+            </div>
+
+            <div class="sceneHeart">
+                ✨
+            </div>
+
+        </div>
 
     </div>
 
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      FINAL
-========================= -->
+===================================================== -->
 
 <div id="finalPage">
 
-    <div class="finalContent">
+<div class="finalContent">
 
-        <div class="finalHeart">
-            💖
-        </div>
+    <div class="finalHeart">
+        💖
+    </div>
 
-        <div class="finalTitle">
-            Selamat Ulang Tahun
-        </div>
+    <div class="finalTitle">
+        Selamat Ulang Tahun
+    </div>
 
-        <div class="enku">
-            Enku ❤️
-        </div>
+    <div class="enku">
+        Enku ❤️
+    </div>
 
-        <div class="finalMessage">
+    <div class="finalDate">
+        20 SEPTEMBER 2026
+    </div>
 
-            Semoga hari-harimu selalu
-            dipenuhi kebahagiaan.
+    <div class="finalMessage">
 
-            <br>
+        Semoga di usia yang baru ini,
+        semakin banyak hal indah
+        yang datang menghampirimu.
 
-            Semoga semua yang kamu impikan
-            perlahan menjadi nyata.
+        <br><br>
 
-            <br><br>
+        Semoga setiap langkahmu
+        selalu dimudahkan,
+        setiap lelahmu diganti
+        dengan kebahagiaan,
+        dan setiap harapan yang kamu simpan
+        perlahan menemukan jalannya.
 
-            Dan semoga senyum itu...
-            <br>
-            selalu punya alasan untuk tetap ada. ✨
+        <br><br>
 
-        </div>
+        Tetaplah menjadi Enku
+        yang selalu punya tempat
+        istimewa di hatiku. ❤️
 
     </div>
 
 </div>
+
+</div>
+
 
 <div id="flash"></div>
 
 
 <script>
 
-/* =========================
-   BINTANG
-========================= */
+/* =====================================================
+   STARS
+===================================================== */
 
-for(let i=0;i<100;i++){
+for(let i=0;i<110;i++){
 
-    let star=document.createElement("div");
+    const star=
+        document.createElement("div");
 
     star.className="star";
 
@@ -555,243 +1191,542 @@ for(let i=0;i<100;i++){
 }
 
 
-/* =========================
-   VARIABEL
-========================= */
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
-const btn=document.getElementById("btn");
-const joke=document.getElementById("joke");
-const level=document.getElementById("level");
+const btn=
+    document.getElementById("thanksBtn");
+
+const joke=
+    document.getElementById("joke");
+
+const patience=
+    document.getElementById("patience");
 
 let clicks=0;
 
 
-/* =========================
-   KATA-KATA JAHIL
-========================= */
+/* =====================================================
+   JAHIL LEVEL
+===================================================== */
 
 const jokes=[
 
-"HAHAHA 😜 hampir!",
-"Eh kok cepat sekali?",
-"Belum boleh 😏",
-"Kejar aku dulu!",
-"Salah tombol 😂",
-"HAHAHA kabur lagi!",
-"Dikit lagi...",
-"Eh... aku di sini 😝",
-"Masih belum!",
-"Kesabaranmu mulai berkurang 😈",
-"Jangan menyerah dong 😂",
-"Aku tahu kamu kesal 😏",
-"TINGGAL SEDIKIT!",
-"BOHONG 😭😂",
-"Oke... ini serius..."
+"Katanya cuma klik sekali... kok serius banget? 😏",
+
+"Eh? Kok benar-benar diklik? 😂",
+
+"HAHAHA... belum boleh, Enku 😝",
+
+"Maaf ya... tombolnya sedang malu 🙈",
+
+"Dia kabur! Kejar lagi sana 😭😂",
+
+"Sedikit lagi... sedikit banget... bohong 😌",
+
+"Enku sabar ya... ini baru pemanasan 😈",
+
+"Kalau tombolnya bisa ngomong, dia sudah minta tolong 😂",
+
+"Jangan marah dulu... aku cuma bercanda ❤️",
+
+"EH! Hampir dapat! 😳",
+
+"HAHAHA, kamu mulai kesal ya? 😝",
+
+"Tenang... aku tahu kamu bisa 😏",
+
+"Jangan menyerah dong, Enku ❤️",
+
+"Tombol ini ternyata lebih pintar dari kita 😂",
+
+"Kalau kamu terus mengejar, aku juga terus kabur 😌",
+
+"Baiklah... aku kasih kesempatan.",
+
+"...",
+
+"Eh ternyata bohong lagi 😭😂",
+
+"Serius sekarang. Klik lagi.",
+
+"AKU JANJI INI YANG TERAKHIR.",
+
+"...",
+
+"Ya ampun, masih dikejar juga? 😂❤️",
+
+"Baiklah Enku... kamu memang pantang menyerah.",
+
+"Kayaknya aku harus menyerah duluan 😭"
 
 ];
 
 
-/* =========================
-   FUNGSI PINDAH
-========================= */
+/* =====================================================
+   MOVE BUTTON
+===================================================== */
 
 function moveButton(){
 
     btn.style.position="fixed";
 
-    let padding=15;
-
-    let maxX=
+    const maxX=
         window.innerWidth-
         btn.offsetWidth-
-        padding;
+        10;
 
-    let maxY=
+    const maxY=
         window.innerHeight-
         btn.offsetHeight-
-        padding;
+        10;
 
-    let x=
-        padding+
-        Math.random()*maxX;
+    const x=
+        10+
+        Math.random()*Math.max(10,maxX);
 
-    let y=
-        padding+
-        Math.random()*maxY;
+    const y=
+        10+
+        Math.random()*Math.max(10,maxY);
+
+    const rotate=
+        Math.random()*70-35;
+
+    const scale=
+        .65+
+        Math.random()*.8;
 
     btn.style.left=x+"px";
+
     btn.style.top=y+"px";
-
-    /* RANDOM ROTASI */
-
-    let rotate=
-        Math.random()*50-25;
-
-    let scale=
-        .7+
-        Math.random()*.8;
 
     btn.style.transform=
         `rotate(${rotate}deg) scale(${scale})`;
 }
 
 
-/* =========================
-   KLIK
-========================= */
+/* =====================================================
+   CLICK
+===================================================== */
 
-btn.addEventListener("click",function(){
+btn.addEventListener("click",()=>{
 
     clicks++;
 
-    /* UPDATE TEKS */
+    /* =========================
+       NORMAL JAHIL
+    ========================= */
 
-    joke.innerHTML=
-        jokes[(clicks-1)%jokes.length];
-
-
-    /* LEVEL KESABARAN */
-
-    let patience=
-        Math.max(0,100-clicks*8);
-
-    level.innerHTML=
-        "Tingkat kesabaran: "+
-        patience+"%";
-
-
-    /* =====================
-       KLIK KE 3
-    ===================== */
-
-    if(clicks===3){
+    if(clicks<5){
 
         joke.innerHTML=
-        "Hmm... kamu masih bertahan? 😏";
+            jokes[clicks-1];
 
+        patience.innerHTML=
+            "Tingkat kesabaran Enku: "+
+            Math.max(
+                0,
+                100-clicks*7
+            )+"%";
+
+        moveButton();
+
+        return;
     }
 
 
-    /* =====================
-       KLIK KE 5
-    ===================== */
+    /* =========================
+       POPUP 1
+    ========================= */
 
     if(clicks===5){
 
         document.getElementById(
-            "warning"
+            "popupTitle"
+        ).innerHTML=
+        "⚠️ PERINGATAN";
+
+        document.getElementById(
+            "popupText"
+        ).innerHTML=
+        `
+        Sistem mendeteksi bahwa kamu
+        sudah mengejar tombol ini
+        sebanyak 5 kali.
+        <br><br>
+        Apakah kamu yakin ingin
+        melanjutkan?
+        `;
+
+        document.getElementById(
+            "popup"
         ).style.display="flex";
 
         return;
     }
 
 
-    /* =====================
-       KLIK KE 7
-    ===================== */
+    /* =========================
+       AFTER POPUP
+    ========================= */
 
-    if(clicks===7){
-
-        joke.innerHTML=
-        "Oke... aku kasih kesempatan terakhir 😇";
-
-    }
-
-
-    /* =====================
-       KLIK KE 9
-    ===================== */
-
-    if(clicks===9){
+    if(clicks>=6 && clicks<9){
 
         joke.innerHTML=
-        "SERIOUSLY?! 😂";
+            jokes[clicks-1];
 
-    }
-
-
-    /* =====================
-       KLIK KE 11
-    ===================== */
-
-    if(clicks===11){
-
-        joke.innerHTML=
-        "Baiklah... kamu menang.";
-
-        setTimeout(showFinal,1500);
+        moveButton();
 
         return;
     }
 
 
-    moveButton();
+    /* =========================
+       POPUP 2
+    ========================= */
+
+    if(clicks===9){
+
+        document.getElementById(
+            "popupTitle"
+        ).innerHTML=
+        "😈 KAMU SERIUS?";
+
+        document.getElementById(
+            "popupText"
+        ).innerHTML=
+        `
+        Enku...
+        <br><br>
+        Kamu sebenarnya bisa berhenti
+        kapan saja.
+        <br><br>
+        Tapi kalau berhenti sekarang,
+        kamu tidak akan tahu
+        apa yang ada di akhir. 👀
+        `;
+
+        document.getElementById(
+            "popup"
+        ).style.display="flex";
+
+        return;
+    }
+
+
+    /* =========================
+       10 - 13
+    ========================= */
+
+    if(clicks>=10 && clicks<14){
+
+        joke.innerHTML=
+            jokes[clicks-1];
+
+        moveButton();
+
+        return;
+    }
+
+
+    /* =========================
+       FAKE SUCCESS
+    ========================= */
+
+    if(clicks===14){
+
+        joke.innerHTML=
+        "OKE. SEKARANG TINGGAL SATU LANGKAH.";
+
+        btn.innerHTML=
+        "LANJUTKAN ❤️";
+
+        btn.style.transform=
+        "scale(1.1)";
+
+        return;
+    }
+
+
+    /* =========================
+       LAST TRAP
+    ========================= */
+
+    if(clicks===15){
+
+        joke.innerHTML=
+        "HAHAHA... KENA LAGI 😭";
+
+        btn.innerHTML=
+        "BENARKAH INI TERAKHIR?";
+
+        moveButton();
+
+        return;
+    }
+
+
+    /* =========================
+       FINAL BUTTON
+    ========================= */
+
+    if(clicks===16){
+
+        joke.innerHTML=
+        "Baiklah... kali ini aku menyerah.";
+
+        btn.innerHTML=
+        "OKE, AKU MENYERAH ❤️";
+
+        btn.style.position="relative";
+
+        btn.style.left="auto";
+
+        btn.style.top="auto";
+
+        btn.style.transform=
+        "scale(1.05)";
+
+        return;
+    }
+
+
+    /* =========================
+       START
+    ========================= */
+
+    if(clicks>=17){
+
+        startLoading();
+
+    }
 
 });
 
 
-/* =========================
-   WARNING
-========================= */
+/* =====================================================
+   CLOSE POPUP
+===================================================== */
 
-function closeWarning(){
+function closePopup(){
 
     document.getElementById(
-        "warning"
+        "popup"
     ).style.display="none";
 
-    moveButton();
-
     joke.innerHTML=
-    "HAHAHA... kamu tertipu 😈";
+    [
+        "HAHAHA... kamu tertipu 😈",
+        "Silakan lanjut mengejar 😝",
+        "Aku belum selesai menggodamu 😂"
+    ][
+        Math.floor(
+            Math.random()*3
+        )
+    ];
+
+    moveButton();
 }
 
 
-/* =========================
-   FINAL
-========================= */
+/* =====================================================
+   LOADING
+===================================================== */
 
-function showFinal(){
-
-    /* FLASH */
-
-    const flash=
-        document.getElementById("flash");
-
-    flash.style.opacity="1";
-
-    setTimeout(()=>{
-
-        flash.style.transition=
-            "opacity 1.5s";
-
-        flash.style.opacity="0";
-
-    },150);
-
-
-    /* HILANGKAN HALAMAN */
+function startLoading(){
 
     document.getElementById(
         "mainPage"
     ).style.display="none";
 
+    document.getElementById(
+        "loading"
+    ).style.display="flex";
 
-    /* TAMPILKAN FINAL */
+    const progress=
+        document.getElementById(
+            "progress"
+        );
+
+    const loadingText=
+        document.getElementById(
+            "loadingText"
+        );
+
+    const texts=[
+
+        "Menyiapkan sesuatu untuk Enku...",
+
+        "Mengumpulkan semua kata-kata...",
+
+        "Menyusun kenangan kecil...",
+
+        "Mencari kalimat yang paling tepat...",
+
+        "Menghidupkan sedikit keajaiban...",
+
+        "Menyiapkan kejutan terakhir...",
+
+        "Hampir selesai, Enku...",
+
+        "Satu hal terakhir... ❤️"
+
+    ];
+
+    let p=0;
+
+    const interval=
+        setInterval(()=>{
+
+            p+=Math.floor(
+                Math.random()*8
+            )+4;
+
+            if(p>100)
+                p=100;
+
+            progress.style.width=
+                p+"%";
+
+            loadingText.innerHTML=
+                texts[
+                    Math.min(
+                        Math.floor(
+                            p/14
+                        ),
+                        texts.length-1
+                    )
+                ];
+
+            if(p>=100){
+
+                clearInterval(interval);
+
+                setTimeout(
+                    startCinematic,
+                    1200
+                );
+            }
+
+        },450);
+}
+
+
+/* =====================================================
+   CINEMATIC
+===================================================== */
+
+function startCinematic(){
+
+    document.getElementById(
+        "loading"
+    ).style.display="none";
+
+    const cinematic=
+        document.getElementById(
+            "cinematic"
+        );
+
+    cinematic.style.display="flex";
+
+    const scenes=
+        document.querySelectorAll(
+            ".cinemaScene"
+        );
+
+    let index=0;
+
+    function showScene(){
+
+        if(index>=scenes.length){
+
+            cinematic.style.transition=
+                "opacity 2s";
+
+            cinematic.style.opacity="0";
+
+            setTimeout(()=>{
+
+                cinematic.style.display=
+                    "none";
+
+                showFinal();
+
+            },2000);
+
+            return;
+        }
+
+        scenes.forEach(
+            scene=>{
+                scene.style.opacity="0";
+            }
+        );
+
+        const scene=
+            scenes[index];
+
+        scene.style.opacity="1";
+
+        const content=
+            scene.querySelector(
+                ".sceneContent"
+            );
+
+        content.style.transform=
+            "translateY(0)";
+
+        index++;
+
+        setTimeout(
+            showScene,
+            4200
+        );
+    }
+
+    showScene();
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+function showFinal(){
+
+    const flash=
+        document.getElementById(
+            "flash"
+        );
+
+    flash.style.transition=
+        "opacity .3s";
+
+    flash.style.opacity="1";
+
+    setTimeout(()=>{
+
+        flash.style.opacity="0";
+
+    },400);
+
 
     document.getElementById(
         "finalPage"
     ).style.display="flex";
 
 
-    /* HATI */
+    /* HEARTS */
 
-    for(let i=0;i<60;i++){
+    for(let i=0;i<70;i++){
 
         setTimeout(()=>{
 
-            let heart=
-                document.createElement("div");
+            const heart=
+                document.createElement(
+                    "div"
+                );
 
             heart.className=
                 "flyingHeart";
@@ -803,10 +1738,11 @@ function showFinal(){
                     "💕",
                     "💗",
                     "💓",
-                    "✨"
+                    "✨",
+                    "🌸"
                 ][
                     Math.floor(
-                        Math.random()*6
+                        Math.random()*7
                     )
                 ];
 
@@ -814,38 +1750,78 @@ function showFinal(){
                 Math.random()*100+"%";
 
             heart.style.fontSize=
-                (15+
-                Math.random()*40)+"px";
+                15+
+                Math.random()*40+
+                "px";
 
             heart.style.animationDuration=
-                (3+
-                Math.random()*5)+"s";
+                4+
+                Math.random()*5+
+                "s";
 
             document.getElementById(
                 "finalPage"
-            ).appendChild(heart);
+            ).appendChild(
+                heart
+            );
 
             setTimeout(()=>{
                 heart.remove();
-            },8000);
+            },9000);
 
-        },i*80);
-
+        },i*70);
     }
 
 
-    /* =====================
-       CONFETTI
-    ===================== */
+    /* PETALS */
 
-    for(let i=0;i<120;i++){
+    for(let i=0;i<50;i++){
 
         setTimeout(()=>{
 
-            let c=
-                document.createElement("div");
+            const petal=
+                document.createElement(
+                    "div"
+                );
 
-            c.className="confetti";
+            petal.className=
+                "petal";
+
+            petal.style.left=
+                Math.random()*100+"%";
+
+            petal.style.animationDuration=
+                4+
+                Math.random()*5+
+                "s";
+
+            document.getElementById(
+                "finalPage"
+            ).appendChild(
+                petal
+            );
+
+            setTimeout(()=>{
+                petal.remove();
+            },9000);
+
+        },i*100);
+    }
+
+
+    /* CONFETTI */
+
+    for(let i=0;i<130;i++){
+
+        setTimeout(()=>{
+
+            const c=
+                document.createElement(
+                    "div"
+                );
+
+            c.className=
+                "confetti";
 
             c.style.left=
                 Math.random()*100+"%";
@@ -865,8 +1841,9 @@ function showFinal(){
                 ];
 
             c.style.animationDuration=
-                (2+
-                Math.random()*4)+"s";
+                2+
+                Math.random()*4+
+                "s";
 
             document.getElementById(
                 "finalPage"
@@ -874,10 +1851,9 @@ function showFinal(){
 
             setTimeout(()=>{
                 c.remove();
-            },6000);
+            },7000);
 
         },i*25);
-
     }
 
 }
